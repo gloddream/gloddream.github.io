@@ -8,6 +8,8 @@ categories: jekyll
 * content
 {:toc}
 
+在学习CNN的时候,需要使用GPU进行运算,简单对比了下阿里云的HPC和亚马逊AWS中EC2中的GPU实例,选择尝试使用AWS竞价请求实例和自定义AMI来开始.[五大主流深度学习框架](http://blog.revolutionanalytics.com/2016/08/deep-learning-part-1.html),对比选择使用[MXNET](http://mxnet.io/)进行开始.
+
 ## Create AWS GPU instance
 
 竞价请求实例,使用自定义iam
