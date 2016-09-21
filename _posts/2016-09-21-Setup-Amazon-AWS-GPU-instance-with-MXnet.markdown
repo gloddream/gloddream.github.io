@@ -43,11 +43,11 @@ categories: jekyll
 
 	sudo vi /etc/modprobe.d/blacklist-nouveau.conf
 
-    	blacklist nouveau
-    	blacklist lbm-nouveau
-    	options nouveau modeset=0
-    	alias nouveau off
-    	alias lbm-nouveau off
+>blacklist nouveau
+>blacklist lbm-nouveau
+>options nouveau modeset=0
+>alias nouveau off
+>alias lbm-nouveau off
 
 	echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
 	sudo update-initramfs -u
@@ -67,9 +67,11 @@ Wait before finish rebooting, usually 1 min, and login back to the instance to c
 	sudo apt-get install -y cuda
 	
 	export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-**important**: Please reboot the instance for loading the driver
+	
+**important**: Please reboot the instance for loading the driver:
 	
 	sudo reboot
+	
 If everything is fine, nvidia-smi should look like this (4 GPU instance) for example:
 ![nvidia-smi]({{ "/css/pics/nvidia-smi.png"}})  
 
@@ -77,7 +79,7 @@ If everything is fine, nvidia-smi should look like this (4 GPU instance) for exa
 
 ### Optional: cuDNN
 
-One can apply for the developer program here https://developer.nvidia.com/cudnn. When approved, download cuDNN for Linux, upload the cuDNN package from the local computer to the instance:
+One can apply for the developer program here [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn). When approved, download cuDNN for Linux, upload the cuDNN package from the local computer to the instance:
 
 	
 >scp -i dnn.pem cudnn-7.5-linux-x64-v5.1.tgz ubuntu@ec2-52-43-236-249.us-west-2.compute.amazonaws.com:~
@@ -154,11 +156,11 @@ It is OpenCV problem on AWS. One can simply disable it by:
 	
 always get:
 
->libdc1394 error: Failed to initialize libdc1394
->Traceback (most recent call last):
-	>File "run.py", line 8, in <module>
-    >from skimage import io, transform
-	>ImportError: No module named skimage
+`libdc1394 error: Failed to initialize libdc1394`
+`Traceback (most recent call last):`
+	`File "run.py", line 8, in <module>`
+    `from skimage import io, transform`
+	`ImportError: No module named skimage`
 		
 do:
 	
