@@ -40,13 +40,19 @@ categories: jekyll
 ## Some trouble shooting
 
 **error1**
+
 `bdc1394 error: Failed to initialize libdc1394`
+
 	sudo ln /dev/null /dev/raw1394
 
 **error2**
+
 `Gdk-CRITICAL **: gdk_cursor_new_for_display: assertion 'GDK_IS_DISPLAY (display)' Failed:`
+
 Edit: {caffe_root}/python/caffe/__init__.py
+
 Add the following lines to the top:
+
 	import matplotlib
 	matplotlib.use('Agg')
 
